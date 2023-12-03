@@ -1,1 +1,19 @@
-<p>side-bar works!</p>
+<div class="nav">
+  <ul>
+    <li class="nav-item" *ngFor="let item of itemsNav.nav">
+      <i [ngClass]="['uil', item.icon]" [id]="item.title"></i>
+      <label for="{{item.title}}">{{item.title}}</label>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item" *ngFor="let item of itemsNav.acctions">
+      <i [ngClass]="['uil', item.icon]"></i>
+      <label for="{{item.title}}">{{item.title}}</label>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item" *ngFor="let item of optionsNav">
+      <label for="{{item.title}}">{{item.title}}</label>
+    </li>
+  </ul>
+</div>

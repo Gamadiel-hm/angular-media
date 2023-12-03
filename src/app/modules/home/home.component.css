@@ -1,0 +1,12 @@
+.sidebar {
+  width: 15rem;
+  min-height: 100vh;
+  position: fixed;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    border-right: 1px solid var(--b100);
+    box-shadow: var(--shadow-1);
+  }
+}

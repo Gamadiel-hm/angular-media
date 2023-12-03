@@ -1,14 +1,22 @@
 :root {
-  --color-1: #1db954;
-  --color-2: #323232;
-  --color-3: #000000;
-  --color-4: #ffffff;
-  --color-5: #181818;
+  /* color black-haze */
+  --bhaze-50: #f8fbfc;
+  --bhaze-100: #e9f2f5;
+  --bhaze-200: #cee4e9;
+  --bhaze-300: #a3ced6;
+  --bhaze-400: #72b2be;
+  --bhaze-500: #5099a7;
+  --bhaze-600: #3d7d8c;
+  --bhaze-700: #326572;
+  --bhaze-800: #2d555f;
+  --bhaze-900: #294851;
+  --bhaze-950: #1b2f36;
+
   --font-size-1: 1rem;
   --font-size-2: 1.2rem;
   --font-size-3: 1.8rem;
-  --shadow-1: rgb(0 0 0 / 35%) 0px 8px 24px;
-  --shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --shadow-1: #00000059 0px 8px 24px;
+  --shadow-2: #64646f33 0px 7px 29px 0px;
   --border-radius-1: 0.25rem;
   --border-radius-2: 0.5rem;
   --font-family-1: "Montserrat", sans-serif;
@@ -23,7 +31,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--color-4);
+  background-color: var(--);
   font-family: var(--font-family-1);
   font-size: var(--font-size-1);
   color: var(--color-4);
@@ -40,8 +48,24 @@ button:disabled {
 }
 
 @media (prefers-color-scheme: dark) {
+  /* color black */
+  :root {
+    --b50: #f6f6f6;
+    --b100: #e7e7e7; /* border */
+    --b200: #d1d1d1;
+    --b300: #b0b0b0;
+    --b400: #888888;
+    --b500: #6d6d6d;
+    --b600: #5d5d5d;
+    --b700: #4f4f4f; /* Background */
+    --b800: #454545;
+    --b900: #3d3d3d;
+    --b950: #030303;
+  }
+
   html,
   body {
-    background-color: #000;
+    background-color: var(--b700);
+    color: var(--b100);
   }
 }

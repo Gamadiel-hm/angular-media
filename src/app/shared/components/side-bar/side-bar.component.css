@@ -1,0 +1,33 @@
+ul {
+  list-style: none;
+  padding: 0;
+  border-bottom: 1px solid var(--b100);
+}
+li {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  padding: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-item {
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+  padding: 0.2rem 1rem;
+  border-radius: var(--border-radius-1);
+  transition: background-color 1s ease-out, color 0.5s ease-out;
+}
+.nav-item i {
+  margin-right: 1rem;
+}
+
+.nav-item:hover {
+  background-color: var(--b300);
+  color: var(--b950);
+}
