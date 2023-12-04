@@ -1,7 +1,27 @@
+.container {
+  min-height: calc(100vh - var(--footer));
+  min-width: 100vw;
+  position: fixed;
+  display: flex;
+}
+
 .sidebar {
   width: 15rem;
-  min-height: 100vh;
-  position: fixed;
+  background-color: var(--b900);
+}
+
+.body {
+  padding: 2rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  min-width: 100vw;
+  height: var(--footer);
+  border-top: 1px solid var(--b100);
+  box-shadow: var(--shadow-1);
+  padding: var(--padding1);
 }
 
 @media (prefers-color-scheme: dark) {
