@@ -1,0 +1,74 @@
+.container-mediap {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(2rem, 1fr));
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "card media media options";
+}
+
+.card-artist {
+  grid-area: card;
+  display: flex;
+  gap: 0.2rem;
+  justify-content: center;
+}
+
+.card-artist div {
+  height: 100%;
+  width: 100%;
+}
+
+.image img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.card-icon {
+  font-size: var(--font-size-icon);
+}
+
+.card-icon i {
+  bottom: 50%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.media {
+  grid-area: media;
+  display: flex;
+  flex-direction: column;
+}
+
+.media-buttons {
+  display: flex;
+  gap: 1rem;
+  align-self: center;
+}
+
+.media-buttons i {
+  font-size: var(--font-size-icon2);
+}
+.media-timiline {
+  position: relative;
+  width: 100%;
+}
+
+.media-timiline input {
+  width: 100%;
+}
+
+.timiline-start {
+  position: absolute;
+  transform: translateY(100%);
+}
+
+.timiline-end {
+  position: absolute;
+  right: 0;
+  transform: translateY(100%);
+}
