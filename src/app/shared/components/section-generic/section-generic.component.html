@@ -1,0 +1,8 @@
+<div class="container-genericSection">
+  <h1>{{titleInput ? titleInput : 'New contenido'}}</h1>
+  <div [class]="sizeInput === 'big'? 'section-a' : 'section-b'">
+    <ng-container *ngFor="let track of tracksInput">
+      <app-card-player [tracks]="track" [sizeCards]="sizeInput"></app-card-player>
+    </ng-container>
+  </div>
+</div>

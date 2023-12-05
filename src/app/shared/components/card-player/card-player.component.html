@@ -1,0 +1,29 @@
+<ng-container *ngIf="sizeCards === 'big'; else small_size">
+  <div class="card-big">
+    <div class="card-image">
+      <img [src]="tracks.cover" alt="">
+      <div class="card-play">
+        <i class="uil uil-play-circle"></i>
+      </div>
+    </div>
+    <div class="card-info">
+      <label>{{tracks.name}}</label>
+      <label> {{tracks.album}} </label>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Template size small -->
+<ng-template #small_size>
+  <div class="card-small">
+    <div class="card-image-small">
+      <img [src]="tracks.cover" alt="">
+      <div class="card-play-small">
+        <i class="uil uil-play-circle"></i>
+      </div>
+    </div>
+    <div class="card-info-small">
+      <label>{{tracks.name}}</label>
+    </div>
+  </div>
+</ng-template>

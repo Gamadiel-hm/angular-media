@@ -1,5 +1,5 @@
 .container {
-  min-height: calc(100vh - var(--footer));
+  max-height: calc(100vh - var(--footer));
   min-width: 100vw;
   position: fixed;
   display: flex;
@@ -7,15 +7,18 @@
 
 .sidebar {
   width: 15rem;
+  height: calc(100vh - var(--footer));
   background-color: var(--b900);
 }
 
 .body {
+  flex-grow: 1;
+  overflow-y: auto;
   padding: 2rem;
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   min-width: 100vw;
   height: var(--footer);
