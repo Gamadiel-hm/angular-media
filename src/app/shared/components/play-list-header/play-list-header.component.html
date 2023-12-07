@@ -27,7 +27,7 @@
     </th>
   </thead>
   <tbody>
-    <tr *ngFor="let track of tracks">
+    <tr *ngFor="let track of tracks |orderList:objectFilter">
       <td class="img"><img [src]="track.cover" [alt]="track.name"></td>
       <td>{{track.name}}</td>
       <td>{{track.album}}</td>

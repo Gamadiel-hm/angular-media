@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { OrderListPipe } from '@share/pipe/order-list.pipe';
 import { TrackModel } from 'src/app/core/artist';
 import {
   Filters,
@@ -14,7 +15,7 @@ import * as dataRow from 'src/app/data/tracks.json';
 @Component({
   selector: 'app-play-list-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, OrderListPipe],
   templateUrl: './play-list-header.component.html',
   styleUrl: './play-list-header.component.css',
 })

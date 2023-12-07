@@ -1,17 +1,8 @@
-export interface ObjectFilter {
-  after: string;
-  before: string;
-}
-
-export const objectinit: ObjectFilter = {
-  after: '',
-  before: '',
-};
-
 export enum Filters {
-  titulo = 'titulo',
+  titulo = 'name',
   album = 'album',
   artist = 'artist',
+  default = 'default',
 }
 
 export const filtersArray: Filters[] = [
@@ -32,3 +23,13 @@ export const objectIcon: IconsFilter[] = [
     icon: 'uil-arrow-down',
   },
 ];
+
+export interface ObjectFilter {
+  after: Filters;
+  before: Filters;
+}
+
+export const objectinit: ObjectFilter = {
+  after: Filters.default,
+  before: Filters.default,
+};
