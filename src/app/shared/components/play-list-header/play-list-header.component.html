@@ -1,9 +1,41 @@
 <table>
   <thead>
-    <th>Titulo</th>
-    <th>Album</th>
-    <th></th>
-    <th></th>
+    <th>Img</th>
+    <th (click)="changeFilter(filterEnum[0])">
+      <div>
+        Titulo
+        <ng-container *ngIf="objectFilter.before === filterEnum[0]; else iconArrowUp">
+          <i class="uil" [ngClass]="countClick % 2 === 0 ? iconsObject[0].icon : iconsObject[1].icon"></i>
+        </ng-container>
+      </div>
+    </th>
+    <th (click)="changeFilter(filterEnum[1])">
+      <div>
+        Album
+        <ng-container *ngIf="objectFilter.before === filterEnum[1]; else iconArrowUp">
+          <i class="uil" [ngClass]="countClick % 2 === 0 ? iconsObject[0].icon : iconsObject[1].icon"></i>
+        </ng-container>
+      </div>
+    </th>
+    <th (click)="changeFilter(filterEnum[2])">
+      <div>
+        Artist
+        <ng-container *ngIf="objectFilter.before === filterEnum[2]; else iconArrowUp">
+          <i class="uil" [ngClass]="countClick % 2 === 0 ? iconsObject[0].icon : iconsObject[1].icon"></i>
+        </ng-container>
+      </div>
+    </th>
   </thead>
-  <tbody></tbody>
+  <tbody>
+    <tr *ngFor="let track of tracks">
+      <td class="img"><img [src]="track.cover" [alt]="track.name"></td>
+      <td>{{track.name}}</td>
+      <td>{{track.album}}</td>
+      <td>{{track.artist.name}}</td>
+    </tr>
+  </tbody>
 </table>
+
+<ng-template #iconArrowUp>
+  <i class="uil uil-arrow-up"></i>
+</ng-template>

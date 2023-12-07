@@ -1,6 +1,6 @@
 <div class="nav">
   <ul>
-    <li class="nav-item" *ngFor="let item of itemsNav.nav">
+    <li [routerLink]="item.route" class="nav-item" *ngFor="let item of itemsNav.nav">
       <i [ngClass]="['uil', item.icon]" [id]="item.title"></i>
       <label for="{{item.title}}">{{item.title}}</label>
     </li>

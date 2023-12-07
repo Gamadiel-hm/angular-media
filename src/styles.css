@@ -58,7 +58,7 @@ button:disabled {
   :root {
     --b50: #f6f6f6;
     --b100: #e7e7e7; /* border */
-    --b200: #d1d1d1;
+    --b200: #d1d1d1; /* hover */
     --b300: #b0b0b0;
     --b400: #888888;
     --b500: #6d6d6d;

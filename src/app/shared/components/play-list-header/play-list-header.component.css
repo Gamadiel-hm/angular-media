@@ -1,0 +1,46 @@
+.img img {
+  width: 5rem;
+}
+
+table {
+  margin: 0 auto;
+  width: 100%;
+}
+
+table thead th {
+  text-align: start;
+}
+
+th:nth-child(n + 2) {
+  padding: 1rem;
+  border-radius: var(--border-radius-1);
+  transition: all var(--animation-2) ease-out;
+  cursor: pointer;
+}
+
+th div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+i {
+  font-size: 1.5rem;
+}
+
+th:hover:nth-child(n + 2) {
+  background-color: var(--b900);
+}
+
+th:hover div i {
+  color: var(--b500);
+}
+
+td {
+  padding-right: 2rem;
+  border-radius: var(--border-radius-1);
+}
+
+tr:hover td:nth-child(n + 2) {
+  background-color: var(--b500);
+}
