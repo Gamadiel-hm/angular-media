@@ -1,7 +1,7 @@
 <ng-container *ngIf="sizeCards === 'big'; else small_size">
   <div class="card-big">
     <div class="card-image">
-      <img [src]="tracks.cover" alt="">
+      <img appImgBroken [src]="tracks.cover" alt="">
       <div class="card-play">
         <i class="uil uil-play-circle"></i>
       </div>
@@ -17,7 +17,7 @@
 <ng-template #small_size>
   <div class="card-small">
     <div class="card-image-small">
-      <img [src]="tracks.cover" alt="">
+      <img appImgBroken [src]="tracks.cover" alt="">
       <div class="card-play-small">
         <i class="uil uil-play-circle"></i>
       </div>
