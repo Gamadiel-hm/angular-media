@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +16,8 @@ export class AuthService {
       password,
     };
 
-    return this.httpClient.post(`${this.URL}/auth/login`, userCrdentials);
+    return this.httpClient
+      .post<any>(`${this.URL}/auth/login`, userCrdentials)
+      .pipe(tap((res) => (document.cookie = `newUser_=${res.tokenSession}`)));
   }
 }

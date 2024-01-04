@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',

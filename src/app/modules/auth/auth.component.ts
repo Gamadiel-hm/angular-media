@@ -45,7 +45,6 @@ export class AuthComponent implements OnInit {
 
   public submitForm() {
     const { email, password } = this.formAuth.value;
-    console.log(this.formAuth.value);
 
     this.authService.sendCredentials(email, password).subscribe(
       (response) => {
