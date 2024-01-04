@@ -3,7 +3,9 @@
     <div class="card-image">
       <img appImgBroken [src]="tracks.cover" alt="">
       <div class="card-play">
-        <i class="uil uil-play-circle"></i>
+        <button (click)="sendTrackMedia()" type="button" class="btn-play">
+          <i class="uil uil-play-circle"></i>
+        </button>
       </div>
     </div>
     <div class="card-info">
@@ -19,7 +21,9 @@
     <div class="card-image-small">
       <img appImgBroken [src]="tracks.cover" alt="">
       <div class="card-play-small">
-        <i class="uil uil-play-circle"></i>
+        <button (click)="sendTrackMedia()" type="button" class="btn-play">
+          <i class="uil uil-play-circle"></i>
+        </button>
       </div>
     </div>
     <div class="card-info-small">

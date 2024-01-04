@@ -27,7 +27,6 @@ img {
 }
 
 .card-big:hover .card-play {
-  display: block;
   opacity: 1;
 }
 
@@ -50,17 +49,37 @@ img {
 }
 
 .card-play {
-  display: none;
   position: absolute;
   right: 0;
   bottom: 0;
-  font-size: var(--font-size-4);
-  color: var(--bhaze-300);
+  opacity: 0;
+}
+
+.card-play button i {
+  font-size: var(--font-size-5);
+  color: var(--b800);
   transition: color var(--animation-2) ease-out;
 }
 
-.card-play:hover {
+.card-play button i:hover {
   color: #2dff88;
+}
+
+.btn-play {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 5rem;
+  width: 5rem;
+  background-color: none;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.btn-play i {
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
 }
 
 /* Small size */
@@ -86,11 +105,14 @@ img {
 
 .card-play-small {
   position: absolute;
-  top: 50%;
-  transform: translate(50%, -50%);
-  font-size: var(--font-size-4);
-  transition: all var(--animation-2) ease-out;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-small div:nth-child(n + 2) {
@@ -108,13 +130,29 @@ img {
 }
 
 .card-small:hover .card-play-small {
-  color: #2dff88;
+  color: var(--b700);
   font-size: var(--font-size-4);
   opacity: 1;
 }
 
-.card-image-small:hover .card-play-small {
-  color: var(--b100);
+.card-image-small:hover .card-play-small button {
+  color: #2dff88;
+}
+
+.play {
+  border: 0;
+  width: 100%;
+  padding: 0;
+}
+
+.btn-play {
+  height: 3rem;
+  width: 3rem;
+}
+
+.btn-play i {
+  font-size: var(--font-size-4);
+  transition: all var(--animation-2) ease-out;
 }
 
 @media (min-width: 480px) {

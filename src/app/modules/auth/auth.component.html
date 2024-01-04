@@ -1,1 +1,21 @@
-<p>auth works!</p>
+<section class="container-form">
+  <div class="social">
+    <button type="button">Continuar con <i class="uil uil-facebook"></i></button>
+    <button type="button">Continuar con <i class="uil uil-apple"></i></button>
+    <button type="button">Continuar con <i class="uil uil-google"></i></button>
+  </div>
+  <hr>
+  <form [formGroup]="formAuth" (ngSubmit)="submitForm()">
+    <div class="row">
+      <label for="email">Direccion de correo o nombre de usuario</label>
+      <input formControlName="email" type="email" placeholder="Correo o nombre" id="email">
+    </div>
+    <div class="row">
+      <label for="Contraseña">Contraseña</label>
+      <input formControlName="password" type="password" placeholder="Contraseña" id="Contraseña">
+    </div>
+    <div class="row">
+      <button [disabled]="!formAuth.valid" type="submit">Enviar</button>
+    </div>
+  </form>
+</section>

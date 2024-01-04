@@ -3,6 +3,10 @@ export enum SizeSection {
   big = 'big',
 }
 
+export interface Result {
+  data: TrackModel[];
+}
+
 export interface TrackModel {
   _id: number;
   name: string;

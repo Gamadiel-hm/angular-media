@@ -16,6 +16,7 @@
   --font-size-2: 1.2rem;
   --font-size-3: 1.8rem;
   --font-size-4: 2.5rem;
+  --font-size-5: 3rem;
   --shadow-1: #00000059 0px 8px 24px;
   --shadow-2: #64646f33 0px 7px 29px 0px;
   --border-radius-1: 0.25rem;
@@ -45,12 +46,35 @@ body {
 
 input,
 button {
-  cursor: pointer;
   font-family: var(--font-family-1);
+  width: 100%;
+  background: none;
+  border-radius: var(--border-radius-1);
+  box-shadow: var(--shadow-1);
+  height: 2.4rem;
+  font-size: var(--font-size-1);
+  color: var(--b200);
+  transition: all var(--animation-2);
 }
 
 button:disabled {
   opacity: 0.5;
+}
+
+input {
+  background: none;
+  outline: none;
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+  color: var(--b100);
+  border: 1px solid var(--b300);
+  border-radius: var(--border-radius-1);
+  padding: 0 1rem;
+  transition: all var(--animation-2);
+}
+input::placeholder {
+  color: var(--b300);
 }
 
 @media (prefers-color-scheme: dark) {
