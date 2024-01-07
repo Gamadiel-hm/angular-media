@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { ImgBrokenDirective } from '@share/directivas/img-broken.directive';
 import { OrderListPipe } from '@share/pipe/order-list.pipe';
-import { TrackModel } from 'src/app/core/artist';
+import { Result, TrackModel } from 'src/app/core/artist';
 import {
   Filters,
   IconsFilter,
@@ -11,7 +11,6 @@ import {
   objectIcon,
   objectinit,
 } from 'src/app/core/filter';
-import * as dataRow from 'src/app/data/tracks.json';
 
 @Component({
   selector: 'app-play-list-header',
@@ -20,17 +19,17 @@ import * as dataRow from 'src/app/data/tracks.json';
   templateUrl: './play-list-header.component.html',
   styleUrl: './play-list-header.component.css',
 })
-export class PlayListHeaderComponent implements OnInit {
-  tracks: TrackModel[] = [];
+export class PlayListHeaderComponent implements OnChanges {
+  @Input() tracks: Result = { data: [] };
+  tracks2: TrackModel[] = [];
 
   objectFilter: ObjectFilter = objectinit;
   filterEnum: Filters[] = filtersArray;
   iconsObject: IconsFilter[] = objectIcon;
   countClick: number = 0;
 
-  ngOnInit(): void {
-    const { data } = (dataRow as any).default;
-    this.tracks = data;
+  ngOnChanges(changes: SimpleChanges): void {
+    this.tracks2 = this.tracks.data;
   }
 
   changeFilter(filter: Filters) {

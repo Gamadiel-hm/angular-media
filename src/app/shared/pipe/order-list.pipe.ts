@@ -9,6 +9,8 @@ import { orderFunctions } from './orderFunction';
 })
 export class OrderListPipe implements PipeTransform {
   transform(value: TrackModel[], sort: ObjectFilter): TrackModel[] {
+    if (typeof value === 'undefined') return value;
+
     if (sort.after !== sort.before && sort.before !== 'default')
       orderFunctions[sort.before](value);
     else value.reverse();

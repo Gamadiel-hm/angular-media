@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -7,6 +7,7 @@ import {
   Validators as v,
 } from '@angular/forms';
 import { AuthService } from './service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
@@ -17,6 +18,8 @@ import { AuthService } from './service/auth.service';
 })
 export class AuthComponent implements OnInit {
   formAuth: FormGroup = new FormGroup({});
+
+  route = inject(Router);
 
   constructor(
     private formBuilder: FormBuilder,
@@ -48,10 +51,10 @@ export class AuthComponent implements OnInit {
 
     this.authService.sendCredentials(email, password).subscribe(
       (response) => {
-        console.log('Todo Bien');
+        this.route.navigate(['/', 'tracks']);
       },
       (err) => {
-        console.log('Algo ocurrio mal');
+        console.log('Algo ocurrio mal', err);
       }
     );
   }

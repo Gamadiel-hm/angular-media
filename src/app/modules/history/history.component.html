@@ -1,1 +1,6 @@
-<p>history works!</p>
+<section>
+  <input [(ngModel)]="searchTitle" (ngModelChange)="inputSearch($event)" type="text" placeholder="Search by...">
+</section>
+<section>
+  <app-play-list-header [tracks]="Tracks$ | async"></app-play-list-header>
+</section>
