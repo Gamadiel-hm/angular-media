@@ -3,28 +3,33 @@
   </ng-container>
   <div class="media">
     <div class="media-buttons">
-      <i class="uil uil-previous"></i>
-      <i class="uil uil-play-circle"></i>
-      <i class="uil uil-step-forward"></i>
+      <button type="button"><i class="uil uil-previous"></i></button>
+      <button (click)="toogleMedia()" type="button">
+        <i [ngClass]="statusPlay === 'pause' ? 'uil-play-circle' : 'uil-pause-circle' " class="uil"></i>
+      </button>
+      <button type="button"><i class="uil uil-step-forward"></i></button>
     </div>
     <div class="media-timiline">
-      <label class="timiline-start">00</label>
-      <label class="timiline-end">99</label>
-      <input type="range">
+      <input (click)="handleBarScroll($event)" placeholder="range media player" type="range" min="0" max="100"
+        #scrollBar [value]="playMediaService.porcentPlay$ | async">
+      <label class="timiline-start">{{playMediaService.time$ | async}}</label>
+      <label class="timiline-end">{{playMediaService.timeRemaining$ | async}}</label>
     </div>
   </div>
 </div>
 
 <!-- Template card artist -->
 <ng-template #card_artist>
-  <div class="card-artist">
-    <div class="image">
-      <img src="https://cdns-images.dzcdn.net/images/cover/1db3f8f185e68f26feaf0b9d72ff1645/350x350.jpg" alt="imagen1">
+  <ng-container *ngIf="playMediaService.getTrack().value.name">
+    <div class="card-artist" *ngIf="playMediaService.getTrack() | async as mockKover">
+      <div class="image">
+        <img [src]="mockKover.cover" alt="imagen1">
+      </div>
+      <div class="info">
+        <label>{{mockKover.name}}</label>
+        <label>{{mockKover.album}}</label>
+      </div>
+      <div class="card-icon"><i class="uil uil-heart-alt"></i></div>
     </div>
-    <div class="info">
-      <label>Track</label>
-      <label>Album</label>
-    </div>
-    <div class="card-icon"><i class="uil uil-heart-alt"></i></div>
-  </div>
+  </ng-container>
 </ng-template>
