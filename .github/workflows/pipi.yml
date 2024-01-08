@@ -29,11 +29,11 @@ jobs:
         run: npm run build:prod
 
       - name: Rename Index
-        run: mv dist/angular-media/index.html dist/angular-media/404.html
+        run: mv dist/spotify-app/browser/index.html dist/spotify-app/browser/404.html
 
       - name: Deploy to Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          build_dir: dist/angular-media
+          build_dir: dist/spotify-app
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
