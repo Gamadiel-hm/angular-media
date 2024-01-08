@@ -1,3 +1,3 @@
 export const enviroments = {
-  api: 'http://localhost:3000/api/1.0',
+  api: 'https://node-api-tracks-rfed.onrender.com/api/1.0',
 };
