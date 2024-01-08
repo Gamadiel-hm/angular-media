@@ -24,9 +24,6 @@ jobs:
       - name: Buil app bundle
         run: npm run build:prod
 
-      - name: Rename Index
-        run: mv dist/spotify-app/browser/index.html dist/spotify-app/browser/404.html
-
       - name: Deploy to Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:

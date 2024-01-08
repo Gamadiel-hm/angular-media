@@ -28,13 +28,13 @@ export class AuthComponent implements OnInit {
 
   public builderForm() {
     this.formAuth = this.formBuilder.group({
-      email: new FormControl('', [
+      email: new FormControl('test@test.com', [
         v.required,
         v.minLength(10),
         v.maxLength(40),
         v.email,
       ]),
-      password: new FormControl('', [
+      password: new FormControl('12345678', [
         v.required,
         v.minLength(5),
         v.maxLength(20),
