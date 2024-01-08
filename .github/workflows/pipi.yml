@@ -24,9 +24,12 @@ jobs:
       - name: Buil app bundle
         run: npm run build:prod
 
+      - name: Rename Index
+        run: mv dist/angular-media/browser/index.html dist/angular-media/browser/404.html
+
       - name: Deploy to Pages
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          build_dir: dist/spotify-app/browser
+          build_dir: dist/angular-media/browser
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
