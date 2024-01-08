@@ -1,0 +1,39 @@
+name: Deploy-Angular
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Devs
+        run: run i
+
+      - name: Buil app bundle
+        run: npm run build:prod
+
+      - name: Rename Index
+        run: mv dist/angular-media/index.html dist/angular-media/404.html
+
+      - name: Deploy to Pages
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          build_dir: dist/angular-media
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
