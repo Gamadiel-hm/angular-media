@@ -23,7 +23,7 @@ jobs:
           node-version: 18
 
       - name: Install Devs
-        run: run i
+        run: npm i
 
       - name: Buil app bundle
         run: npm run build:prod
